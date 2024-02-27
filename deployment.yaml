@@ -18,24 +18,3 @@ spec:
         image: forargo.azurecr.io/web-front-server:v3
         ports:
         - containerPort: 80
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: dev-metauniv-back-deployment
-spec:
-  revisionHistoryLimit: 0
-  selector:
-    matchLabels:
-      app: dev-metauniv-back
-  replicas: 4
-  template:
-    metadata:
-      labels:
-        app: dev-metauniv-back
-    spec:
-      containers:
-      - name: dev-metauniv-back
-        image: forargo.azurecr.io/web-back-server:v3
-        ports:
-        - containerPort: 3080
